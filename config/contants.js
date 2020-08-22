@@ -10,4 +10,7 @@ module.exports = {
     DB_NAME: "__CONCOX__",
   },
   SECRET_KEY: "SECRET_KEYs",
+  LIMITS: {
+    DEFAULT: 10,
+  },
 };

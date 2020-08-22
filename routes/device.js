@@ -13,5 +13,21 @@ module.exports = {
         return res.json(failJson);
       }
     });
+    app.get("/api/v1/devices/locations", function (req, res) {
+      try {
+        if (!req.query.hasOwnProperty("device_id")) {
+          return res.json({ success: 0, message: "device_id is required" });
+        }
+        if (req.query.hasOwnProperty("page_number") && req.query.page_number <= 0) {
+          return res.json({ success: 0, message: "page_number should be greater than or equal to 1" });
+        }
+        deviceModule.getDevicesLocations(req.query, function (result) {
+          return res.json(result);
+        });
+      } catch (err) {
+        console.log(err);
+        return res.json(failJson);
+      }
+    });
   },
 };
