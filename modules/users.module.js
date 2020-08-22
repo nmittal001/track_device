@@ -1,12 +1,12 @@
 const commonModel = require("../models/common");
-const constants = require("../config/contants");
+const CONSTANTS = require("../config/contants");
 const failJson = { success: 0, message: "There was an error!" };
 const jwt = require("jsonwebtoken");
 
 module.exports = {
   userLogin: async function (headers, callback) {
     try {
-      let res = await commonModel.getAllWithWhereCondition(constants.COLLECTIONS.ACCESS_TOKEN, { account: headers.account });
+      let res = await commonModel.getAllWithWhereCondition(CONSTANTS.COLLECTIONS.ACCESS_TOKEN, { account: headers.account });
       if (res.length === 1) {
         dbAccount = res[0].account;
         dbPassword = res[0].accessToken;
@@ -51,7 +51,7 @@ let getJwtToken = (account_id) => {
   return new Promise(function (resolve, reject) {
     jwt.sign(
       { account: account_id },
-      constants.SECRET_KEY,
+      CONSTANTS.SECRET_KEY,
       {
         expiresIn: "1h", // expires in 1 hours
       },

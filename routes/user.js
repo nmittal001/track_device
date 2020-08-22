@@ -1,8 +1,8 @@
-const userModule = require("../modules/users");
+const userModule = require("../modules/users.module");
 const failJson = { success: 0, message: "There was an error!" };
 module.exports = {
   configure: function (app) {
-    app.get("/api/test", function (req, res) {
+    app.get("/api/v1/test", function (req, res) {
       return res.json({
         success: 1,
         data: { message: "API's are working" },
@@ -11,7 +11,7 @@ module.exports = {
     /**
      * API for login
      */
-    app.get("/login", function (req, res) {
+    app.get("/api/v1/login", function (req, res) {
       try {
         if (!req.headers.hasOwnProperty("account")) {
           return res.json({ success: 0, message: "account is required" });
