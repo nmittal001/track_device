@@ -9,7 +9,7 @@ module.exports = {
           return res.json(result);
         });
       } catch (err) {
-        console.log(err);
+        console.log("Error: ", err);
         return res.json(failJson);
       }
     });
@@ -25,7 +25,7 @@ module.exports = {
           return res.json(result);
         });
       } catch (err) {
-        console.log(err);
+        console.log("Error: ", err);
         return res.json(failJson);
       }
     });

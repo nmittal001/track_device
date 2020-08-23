@@ -33,8 +33,8 @@ db.createConnection().then(
         });
       }
     });
-
     deviceRoute.configure(app);
+
     var server = app.listen(CONSTANTS.PORT, function () {
       console.log("Microservice listening on port " + server.address().port);
     });

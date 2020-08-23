@@ -13,4 +13,8 @@ module.exports = {
   LIMITS: {
     DEFAULT: 10,
   },
+  TIME: { MILLI_SECOND: 900000 },
+  DISTANCE: {
+    METER_RADIUS: 100,
+  },
 };

@@ -9,8 +9,8 @@ module.exports = {
       let res = await commonModel.getAllWithWhereCondition(CONSTANTS.COLLECTIONS.ACCESS_TOKEN, { account: headers.account });
       if (res.length === 1) {
         dbAccount = res[0].account;
-        dbPassword = res[0].accessToken;
-        if (headers.access_token === dbPassword) {
+        dbPassword = res[0].appKey;
+        if (headers.app_key === dbPassword) {
           let token = await getJwtToken(dbAccount);
           if (token[0]) {
             callback({
@@ -33,11 +33,11 @@ module.exports = {
       } else {
         callback({
           success: 0,
-          message: "Incorrect account",
+          message: "Incorrect app_key",
         });
       }
     } catch (err) {
-      console.log(err);
+      console.log("Error: ", err);
       callback(failJson);
     }
   },

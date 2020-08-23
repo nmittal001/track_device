@@ -1,0 +1,104 @@
+{
+	"info": {
+		"_postman_id": "3ac129db-7bdb-4b77-abeb-30a5515dbfb7",
+		"name": "device_tracking",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "LOGIN",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "account",
+						"value": "intugineadmin",
+						"type": "text"
+					},
+					{
+						"key": "app_key",
+						"value": "8FB345B8693CCD00DBC9B9A63CE99161",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:7001/api/v1/login",
+					"host": [
+						"localhost"
+					],
+					"port": "7001",
+					"path": [
+						"api",
+						"v1",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET LOCATIONS FOR A DEVICE",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "jwt_token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiaW50dWdpbmVhZG1pbiIsImlhdCI6MTU5ODE2MjE1NCwiZXhwIjoxNTk4MTY1NzU0fQ.GKFcJNPZb94J0zAEW1kzwBDbrHsJuhETcG8JN0Hk2IA",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:7001/api/v1/devices/locations?device_id=A451&page_number=88880",
+					"host": [
+						"localhost"
+					],
+					"port": "7001",
+					"path": [
+						"api",
+						"v1",
+						"devices",
+						"locations"
+					],
+					"query": [
+						{
+							"key": "device_id",
+							"value": "A451"
+						},
+						{
+							"key": "page_number",
+							"value": "88880"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET DEVICES",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "jwt_token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiaW50dWdpbmVhZG1pbiIsImlhdCI6MTU5ODE2MjE1NCwiZXhwIjoxNTk4MTY1NzU0fQ.GKFcJNPZb94J0zAEW1kzwBDbrHsJuhETcG8JN0Hk2IA",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:7001/api/v1/devices",
+					"host": [
+						"localhost"
+					],
+					"port": "7001",
+					"path": [
+						"api",
+						"v1",
+						"devices"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
