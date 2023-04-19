@@ -1,8 +1,8 @@
 name: Build
 on: push
 jobs:
-  build:
-    name: Build
+  sonarqube:
+    name: Sonar Scan
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -15,7 +15,7 @@ jobs:
           node-version: 12
  
       - name: Intall dependencies
-        run: yarn i
+        run: npm i
 
       - name: Build and analyze
         uses: nmittal001/track_device@master
