@@ -1,10 +1,5 @@
 name: Build
-on:
-  push:
-    branches:
-      - main # the name of your main branch
-  pull_request:
-    types: [opened, synchronize, reopened]
+on: push
 jobs:
   build:
     name: Build
@@ -20,7 +15,7 @@ jobs:
           node-version: 12
  
       - name: Intall dependencies
-        run: npm i
+        run: yarn i
 
       - name: Build and analyze
         uses: nmittal001/track_device@master
