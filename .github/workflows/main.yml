@@ -18,7 +18,7 @@ jobs:
         run: npm i
 
       - name: Build and analyze
-        uses: nmittal001/track_device@master
+        uses: sonarsource/sonarqube-scan-action@master
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
